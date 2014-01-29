@@ -477,6 +477,12 @@ class Framework
 	}
 }
 
+// Composer PSR-0/4 Autoloader
+$autoloaderPath = WEBEDIT_HOME . '/libs/autoload.php';
+if (file_exists($autoloaderPath)) {
+	require_once $autoloaderPath;
+}
+
 // Load configuration
 require_once(FRAMEWORK_HOME . '/service/ConfigurationService.class.php');
 change_ConfigurationService::getInstance()->loadConfiguration(PROFILE);
